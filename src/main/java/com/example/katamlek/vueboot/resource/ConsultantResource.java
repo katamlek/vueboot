@@ -1,6 +1,7 @@
 package com.example.katamlek.vueboot.resource;
 
 import com.example.katamlek.vueboot.model.Consultant;
+import com.example.katamlek.vueboot.model.Skill;
 import com.example.katamlek.vueboot.service.ConsultantHardcodedService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -22,9 +23,14 @@ public class ConsultantResource {
         return consultantHardcodedService.findAll();
     }
 
-    @GetMapping("/instructors/{id}")
+    @GetMapping("/consultants/{id}")
     public Consultant getConsultant(@PathVariable long id) {
         return consultantHardcodedService.findById(id);
+    }
+
+    @GetMapping("/consultants/{id}/skills")
+    public List<Skill> getConsultantSkills(@PathVariable long id) {
+        return consultantHardcodedService.findConsultantSkills(id);
     }
 
     @DeleteMapping("/consultants/{id}")
