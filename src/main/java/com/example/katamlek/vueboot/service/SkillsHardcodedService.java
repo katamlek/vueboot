@@ -1,5 +1,7 @@
-package com.example.katamlek.vueboot.model;
+package com.example.katamlek.vueboot.service;
 
+import com.example.katamlek.vueboot.model.Level;
+import com.example.katamlek.vueboot.model.Skill;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
